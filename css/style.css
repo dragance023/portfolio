@@ -1,0 +1,491 @@
+/* RESET */
+	h1, h2, h3, h4, h5, span, p{
+		padding: 0;
+		margin: 0;
+		cursor: context-menu;
+	}
+
+	body{
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+		box-sizing: border-box;
+		font-family: 'Raleway', sans-serif;
+	}
+	header .heading {
+		right: 10vh;
+		margin-left: 16px;
+		position: absolute;
+		top: 1vw;
+		font-family: "Courier New", Courier, monospace;
+		font-size: 18px;
+		padding-left: 16px;
+		color: #fff;
+	}
+
+	.landing-image, .projects-image {
+		background: url(../img/coffee.jpg);
+		background-position: bottom;
+		background-repeat: no-repeat;
+		background-size: cover;
+	    width: 100vw;
+	    height: 100vh;
+	    position: absolute;
+	    z-index: -1;
+	    background-attachment: fixed;
+	}
+
+
+	/* NAVIGATION */
+	.nav {
+		display: flex;
+		justify-content: center;
+		height: 100vh;
+		align-items: center;
+	}
+	.nav ul{
+		padding: 0;
+	}
+	.nav ul li {
+		list-style: none;
+		display: inline-block;
+		padding: 24px;
+		font-size: 2rem;
+		font-family: 'Raleway', sans-serif;
+	}
+	.nav ul li a{
+		text-decoration: none;
+		color: rgb(204, 201, 201);
+	}
+	.nav ul li a:hover {
+		color: #000;
+	}
+	.btn {
+		border:2px solid rgb(100, 100, 100);
+		border-radius: 18px;
+		padding: 2px 14px;
+		z-index: 1;
+		transition: 400ms ease-in-out;
+	}
+	.btn:hover {
+		opacity: .6;
+		background-color:#ffb329;
+		transition: 800ms ease-in-out;
+		box-shadow: .1px .1px 2px;
+	}
+/* NAVIGATION END */
+
+	/* MODAL */
+	.modal {
+		display: none;
+		position: fixed; 
+		z-index: 1; 
+		padding-top: 100px; 
+		left: 0;
+		top: 0;
+		width: 100%; 
+		height: 100%; 
+		overflow: auto; 
+		background-color: rgb(0,0,0); 
+		background-color: rgba(0,0,0,0.9); 
+	  }
+	/* Modal Content (Image) */
+	.modal-content {
+		margin: auto;
+		display: block;
+		width: 80%;
+		max-width: 800px;
+	}
+	#caption {
+		margin: auto;
+		display: block;
+		width: 80%;
+		max-width: 800px;
+		text-align: center;
+		color: #ccc;
+		padding: 10px 0;
+		height: 150px;
+	  }
+
+	  	  /* Add Animation - Zoom in the Modal */
+	.modal-content, #caption {
+		animation-name: zoom;
+		animation-duration: 500ms;
+	}
+	/* The Close Button */
+	.close {
+		position: absolute;
+		top: 15px;
+		right: 35px;
+		color: #f1f1f1;
+		font-size: 40px;
+		font-weight: bold;
+		transition: 0.3s;
+	}
+	.close:hover {
+		color: #bbb;
+		text-decoration: none;
+		cursor: pointer;
+	}
+/* MODAL END */
+
+	/* PROJECTS */
+	.projects-section {
+		height: 100vh;
+		text-align: center;
+	}
+	.projects-section h2{
+		margin: 0;
+		margin-bottom: 22px;
+		font-size: 2.5rem;
+		color: rgb(68, 68, 68);
+	}
+	/* GRID CONTAINER */
+	.projects-container {
+		display: grid;
+		grid-template-columns: 4fr 4fr 4fr;
+		grid-template-rows: auto;
+		justify-content: center;
+		grid-gap: 20px;
+		margin: auto 20%;
+	}
+	.projects-container > div > h3 {
+		font-size: 20px;
+		color: rgb(53, 52, 52);
+		border-radius: 18px 18px 0 0;
+		transition: ease-in-out 700ms;
+	}
+	.projects > div {
+		border:#222 solid 1px;
+		border-radius: 16px;
+	}
+	.projects > div:hover h3{
+		color: rgb(53, 52, 52);
+		background: #ffb42962;
+		transition: ease-in-out 700ms;
+	}
+	.box:hover {
+		background-color: #f9f9f9;
+		opacity: 1;
+	}
+	.box {
+		background-color: #f9f9f9;
+		opacity: .6;
+		height: 25vh;
+		border-radius: 0px 0px 16px 16px;
+		transition: .8s;
+	}
+/* PROJECTS END*/
+
+
+
+	/* SKILLS */
+	.skills-section {
+		background: rgba(31, 31, 31, 0.959);
+		width: 100%;
+		border-top: solid 7px rgb(0, 0, 0);
+		border-bottom: solid 1px #111111;
+		
+	}
+
+	.skills-section h1, .contact h1 {
+		font-family: "Arial", Courier, monospace;
+		padding-top: 40px;
+		text-align: center;
+		font-size: 2.5rem;
+		color: rgb(190, 190, 190);
+	}
+	.skills-container {
+		padding-top: 40px; 
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		justify-items: center;
+		justify-content: center;
+		width: 80%;
+		margin: 0 auto;
+	}
+	.skills-container > div {
+		width: 120px;
+		height: 120px;
+		margin-bottom: 6.5em;
+	}
+
+	.skills-container > div > span {
+		display: block;
+		font-size: 16px;
+		text-align: center;
+		color: rgb(197, 196, 196);
+		transition: ease-in-out 590ms;
+	}
+
+	.skills-container > div > img {
+		filter: grayscale(70%);
+		transition: ease-in-out 300ms;
+		width: 100%;
+		height: 100%;
+	}
+	.skills-container > div > img:hover {
+		filter: grayscale(0);
+		transition: ease-in-out 590ms;
+		cursor: pointer;
+	}
+
+	.skills-container > div:hover span{
+		color: rgb(255, 246, 246);
+		transition: ease-in-out 590ms;
+	}
+
+
+
+/* ToolTip */
+.tooltiptext {
+  visibility: hidden;
+  color: #fff;
+	border-radius: 6px;
+	margin-right: -100%;
+	/* float: right; */
+	padding: 5px 5em;
+	transition: ease-in-out 200ms;
+}
+
+.skills-section:hover .tooltiptext {
+	visibility: visible;
+	margin-right: 0;
+}
+
+/* TOOLTIP END */
+
+
+/* SKILLS END */
+
+	/* SKill div from left*/
+	.skills-section .css-left-section {
+		background: rgb(31, 30, 30);
+		height: 800px;
+		width: 20%;
+		position: absolute;
+		transition: ease-in-out 700ms;
+		opacity: 0;
+		margin-left: -50%;
+		z-index: 2;
+	}
+
+
+	.skills-section .css-right-section {
+		background: rgb(78, 25, 25);
+		color: rgb(214, 214, 214);
+		height: 800px;
+		width: 80%;
+		position: absolute;
+		margin-left: 100%;
+		transition: ease-in-out 700ms;
+		opacity: 0;
+		z-index: 2;
+	}
+	.css-right-section ul {
+		float: left;
+
+	}
+	#skill-heading {
+		padding: 4em 0 0 2em;
+	}
+	.css-right-section span {
+		padding: .5em 2em 0 0;
+		float: right;
+	}
+	.css-right-section hr {
+		margin-top: 10em;
+		margin-left: 2em;
+	}
+	#textBodyRight {
+		padding: 1em 18em 0em 8em;
+		margin: 0;
+	}
+	#textBodyRightNextCol {
+		padding-top: 1em;
+		margin: 0;
+	}
+
+	#textBodyRight span {
+		float: right;
+	}
+	.clearfix::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+
+	#textBodyLeft > img {
+		width: 200px;
+		display: block;
+		padding-top: 5em;
+		margin: 0 auto;
+	}
+
+
+	.htmlText {
+		margin: 1em;
+		font-size: 1.2em;
+		color: rgb(216, 74, 49);
+	}
+
+	.cssText {
+		margin: 1em;
+		font-size: 1.2em;
+		color: rgb(89, 197, 200);
+	}
+
+	.jsText {
+		margin: 1em;
+		font-size: 1.2em;
+		color: #f0db4f;
+	}
+
+/* About */
+.about {
+	padding: 5em;
+	background: #111111;
+	color: #bbb;
+}
+.about p {
+	margin: 15px 0;
+}
+
+
+
+
+	/* Contact */
+
+	.contact form{
+		width: 50%;
+		padding: 30px;
+		background: #222;
+		margin: 5em auto;
+	}
+
+	.contact input, .contact textarea{
+		width: 100%;
+		margin: 10px 0;
+		padding: 10px 0;
+		box-sizing: border-box;
+	}
+
+	.formParralax {
+		background: url(../img/coffee.jpg);
+		background-position: bottom;
+		background-repeat: no-repeat;
+		background-size: cover;
+	    width: 100vw;
+	    height: 60vh;
+	    position: absolute;
+	    z-index: -1;
+	    background-attachment: fixed;
+	}
+	
+
+
+
+@media(max-width: 960px){
+	header .heading {
+		text-align: right;
+		font-size: 12px;
+		right: 10px;
+		position: absolute;
+	}
+	.landing-image{
+		background-position: center;
+	    background-attachment: scroll;
+	}
+	.nav ul{
+		display: inline;
+		margin: 0;
+		padding: 0;
+	}
+	.nav ul li{
+		text-align: center;
+		font-size: 22px;
+		display: block;
+	}
+	.projects-section {
+		background: url(../img/project.jpg);
+		background-position: right;
+		background-repeat: no-repeat;
+		background-size: cover;
+	    width: 100vw;
+	    height: 1950px;
+	    background-attachment: scroll;
+		overflow: hidden;
+		display: block;
+	}
+	.projects-container {
+		display: grid;
+		grid-template-columns: 2fr;
+		grid-template-rows: auto;
+		justify-content: center;
+		grid-gap: 50px;
+		margin: 0 auto;
+		width: 65%;
+		color: black;
+	}
+	.projects-container, .projects-container h2{
+		position: relative;
+	}
+	.box {
+		height: 35vh;
+	}
+	.footer-container, .skills-section{
+		height: auto;
+	}
+	.box {
+		background-color: #000;
+		opacity: .3;
+	}
+	.about-section {
+		padding: 10px;
+	}
+	.skills-section {
+		height: 1200px;
+	}
+	.skills-container {
+		padding-top: 40px; 
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-items: center;
+		justify-content: center;
+		width: 80%;
+		margin: 0 auto;
+	}
+	.skills-container > div {
+		margin-bottom: 3em;
+	}
+	.skills-container > div > img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@media(max-width: 460px){
+	.skills-container {
+		display: grid;
+		grid-template-columns: 1fr;
+	}	
+	.skills-section {
+		height: 2100px;
+	}
+#css-left-section, .css-right-section {
+		display: none;
+		padding: 0;
+}
+
+@keyframes zoom {
+	from {transform:scale(0)}
+	to {transform:scale(1)}
+  }
+
+
+
+
+
+}
+
