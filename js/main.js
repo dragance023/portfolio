@@ -21,7 +21,7 @@ boxes.forEach(elem => {
         jsInfo();
       }
       else if(e.target.closest('.java')) {
-        console.log("java")
+        javaInfo();
       }
       else if(e.target.closest('.rwd')) {
         console.log("responsive ")
@@ -78,11 +78,20 @@ let jsInfo = function() {
                                + "<li class='jsText'>Asynchronity</li>"
                                + "<li class='jsText'>ECMAScript 6</li>"
                                + "<li class='jsText'>Variable scoping</li>"
-                               + "<li class='jsText'>...</li>"
-                               + "<li class='jsText'>...</li>"
-                               + "<li class='jsText'>...</li>"
-                               + "<li class='jsText'>...</li>"
-  nextColumn.innerHTML         = "<li class='jsText'>...</li>"
+  aboutSkillSpan.innerHTML     = "Something about JavaCcript"
+  skillTextBodyLeft.innerHTML = "<img src='https://raw.githubusercontent.com/dragance023/portfolio-v1/master/img/js.png'>"
+                              + "<h1>Javascript</h1>"
+}
+
+
+let javaInfo = function() {
+  skillContainerRight.style.background = "#060701";
+  skillHeading.innerHTML = "Feeling comfortable with:";
+  skillTextBodyRight.innerHTML = "<li class='javaText'>JavaScript Fundamentals</li>"
+                               + "<li class='javaText'>DOM Manipulation</li>"
+                               + "<li class='javaText'>Asynchronity</li>"
+                               + "<li class='javaText'>ECMAScript 6</li>"
+                               + "<li class='javaText'>Variable scoping</li>"
   aboutSkillSpan.innerHTML     = "Something about JavaCcript"
   skillTextBodyLeft.innerHTML = "<img src='https://raw.githubusercontent.com/dragance023/portfolio-v1/master/img/js.png'>"
                               + "<h1>Javascript</h1>"

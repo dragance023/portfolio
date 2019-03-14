@@ -139,7 +139,7 @@
 		margin: 0;
 		margin-bottom: 22px;
 		font-size: 2.5rem;
-		color: rgb(68, 68, 68);
+		color: rgb(200, 200, 200);
 	}
 	/* GRID CONTAINER */
 	.projects-container {
@@ -151,8 +151,8 @@
 		margin: auto 20%;
 	}
 	.projects-container > div > h3 {
-		font-size: 20px;
-		color: rgb(53, 52, 52);
+		font-size: 16px;
+		color: rgb(172, 172, 172);
 		border-radius: 18px 18px 0 0;
 		transition: ease-in-out 700ms;
 	}
@@ -162,7 +162,7 @@
 	}
 	.projects > div:hover h3{
 		color: rgb(53, 52, 52);
-		background: #ffb42962;
+		background: #5f8c9e;
 		transition: ease-in-out 700ms;
 	}
 	.box:hover {
@@ -170,12 +170,32 @@
 		opacity: 1;
 	}
 	.box {
-		background-color: #f9f9f9;
 		opacity: .6;
 		height: 25vh;
 		border-radius: 0px 0px 16px 16px;
 		transition: .8s;
 	}
+	.project-box-1 {
+		background-image: url('../img/cars.png');
+		background-size: 100%;
+	}
+	.project-box-2 {
+		background-image: url('../img/practice_2.png');
+		background-size: 100%;
+	}
+	.project-box-3 {
+		background-image: url('../img/biling.png');
+		background-size: 100%;
+	}
+	.project-box-4 {
+		background-image: url('../img/imgpreviewer.png');
+		background-size: 100%;
+	}
+	.project-box-5 {
+		background-image: url('../img/1_gotovo_velika.png');
+		background-size: 100%;
+	}
+
 /* PROJECTS END*/
 
 
@@ -342,6 +362,12 @@
 		color: #f0db4f;
 	}
 
+	.javaText {
+		margin: 1em;
+		font-size: 1.2em;
+		color: #ce7c20;
+	}
+
 /* About */
 .about {
 	padding: 5em;
@@ -349,6 +375,18 @@
 	color: #bbb;
 }
 .about p {
+	margin: 15px 0;
+}
+
+
+/* footer */
+.footer {
+	padding: 2em;
+	background: #111111;
+	color: #bbb;
+	text-align: right;
+}
+.footer p {
 	margin: 15px 0;
 }
 
@@ -361,14 +399,24 @@
 		width: 50%;
 		padding: 30px;
 		background: #222;
-		margin: 5em auto;
+		margin: 10em auto 4em;
+		border: 1px solid rgb(47, 47, 47);
 	}
 
-	.contact input, .contact textarea{
+	.contact input{
 		width: 100%;
 		margin: 10px 0;
 		padding: 10px 0;
 		box-sizing: border-box;
+	}
+
+	.contact textarea {
+		width: 100%;
+		padding: 2em 0;
+		box-sizing: border-box;
+	}
+	.contact button {
+		margin-top: 2em;
 	}
 
 	.formParralax {
@@ -377,7 +425,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 	    width: 100vw;
-	    height: 60vh;
+	    /* height: 80vh; */
 	    position: absolute;
 	    z-index: -1;
 	    background-attachment: fixed;
@@ -412,11 +460,11 @@
 		background-position: right;
 		background-repeat: no-repeat;
 		background-size: cover;
-	    width: 100vw;
-	    height: 1950px;
-	    background-attachment: scroll;
+		width: 100vw;
+		background-attachment: scroll;
 		overflow: hidden;
 		display: block;
+		padding-bottom: 100em;
 	}
 	.projects-container {
 		display: grid;
@@ -462,6 +510,21 @@
 	.skills-container > div > img {
 		width: 100%;
 		height: 100%;
+	}
+	.css-right-section, .css-left-section {
+		display: none;
+	}
+	.tooltiptext {
+		display: none;
+	}
+	.about, .footer {
+		padding: 20px;
+		text-align: center;
+	}
+	.contact form {
+		padding: 20px;
+		width: 70%;
+		margin-top: 2em;
 	}
 }
 
