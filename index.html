@@ -19,20 +19,14 @@
 	<nav>
 		<div class="nav">
 			<ul>
-				<li><a class="btn btn--projects" href="#projects">Projects</a></li>
-				<li><a class="btn btn--about" href="#about">About me</a></li>
-				<li><a class="btn btn--contact" href="#contact">Contact</a></li>
+				<li><a class="btn btn--projects" id="projects">Projects</a></li>
+				<li><a class="btn btn--about" id="about">About me</a></li>
+				<li><a class="btn btn--contact" id="contact">Contact</a></li>
 			</ul>
 		</div>
 	</nav>
 <!-- NAVBAR END -->
 		
-<!-- THE MODAL -->
-		<div id="myModal" class="modal">
-			<span class="close">&times;</span>
-			<img class="modal-content" id="img01" src="../" alt="">
-			<div id="caption"></div>
-		</div> 
 
 <!-- PROJECTS -->
 		<div class="projects-section">
@@ -86,7 +80,7 @@
 		</div>
 
 <!-- SKILLS SECTION -->
-		<div class="skills-section" id="about">
+		<div class="skills-section">
 
 
 
@@ -154,6 +148,7 @@
 			<h3>About me</h3>
 			<p>Hello, my name is Dragan, I am born on Zrenjanin. Currently living in Novi Sad, I am looking for company that could provide me internship where I could dedicate my time to improve in any aspect of programming area.</p>
 			<p>I am currently working hard to grasp Angular in total</p>
+			<a href="https://www.dropbox.com/s/79jxa90r7jt9a50/CV-.pdf?dl=1"><button>Download Resume</button></a>
 		</div>
 		<div class="formParralax">
 			<div class="contact">
@@ -166,8 +161,11 @@
 				</form>
 			</div>
 			<div class="footer">
+				
+				<i class="fas fa-caret-up" id="goTopButton"></i>
 				<p>This website was build using pure HTML, CSS, and vanilla JavaScript.</p>
 				<p>Goal was to achieve minimalist design with minor functionality, using No frameworks, libraries or preprocessors.</p>
+
 			</div>
 		</div>
 		
