@@ -179,7 +179,6 @@ function navbarItemClick (event) {
     }
   }
 }
-
 function cubic(t, b, c, d) {
 	t /= d/2;
 	if (t < 1) return -c/2 * (Math.sqrt(1 - t*t) - 1) + b;
@@ -187,4 +186,35 @@ function cubic(t, b, c, d) {
 	return c/2 * (Math.sqrt(1 - t*t) + 1) + b;
 };
 
+
+// text fade in
+document.addEventListener('scroll', showTextOnScroll);
+
+function showTextOnScroll() {
+  let screenPosition = window.innerHeight;
+
+  let aboutText = document.querySelector('.content');
+  let aboutTextPosition = aboutText.getBoundingClientRect().top;
+
+  let footerText = document.querySelector('.footer-content');
+  let footerTextPosition = footerText.getBoundingClientRect().top;
+
+
+  if(aboutTextPosition < screenPosition/1.2) {
+    aboutText.classList.add('show');
+  }
+  if(aboutTextPosition > 1000){
+    aboutText.classList.remove('show');
+  }
+
+
+  if(footerTextPosition < screenPosition/1.2) {
+    footerText.classList.add('show');
+    console.log("asd")
+  }
+  if(footerTextPosition > 900){
+    footerText.classList.remove('show');
+  }
+
+}
 

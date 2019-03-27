@@ -354,6 +354,13 @@
 	width: 220px;
 	height: 30px;
 }
+.content {
+	opacity: 0;
+	transform: translateX(-50px);
+	transition: all ease-in-out 600ms;
+}
+
+
 
 
 /* footer */
@@ -373,7 +380,16 @@
 #goTopButton {
 	cursor: pointer;
 }
+.footer-content {
+	opacity: 0;
+	transform: translateX(50px);
+	transition: all ease-in-out 600ms;
+}
 
+.show {
+	opacity: 1;
+	transform: translateY(0);
+}
 
 
 	/* Contact */
