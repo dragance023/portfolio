@@ -1,17 +1,16 @@
 // selecting skill container elements
-let boxes = document.querySelectorAll(".skill-item");
-skillContainerRight = document.getElementById('css-right');
-skillContainerLeft = document.getElementById('css-left');
-aboutSkillSpan = document.getElementById('aboutSkill');
-skillHeading = document.getElementById('skill-heading');
-skillTextBodyRight = document.getElementById('textBodyRight');
-skillTextBodyLeft = document.getElementById('textBodyLeft');
-nextColumn = document.getElementById('textBodyRightNextCol');
+const boxes = document.querySelectorAll(".skill-item");
+const skillContainerRight = document.getElementById('css-right');
+const skillContainerLeft = document.getElementById('css-left');
+const aboutSkillSpan = document.getElementById('aboutSkill');
+const skillHeading = document.getElementById('skill-heading');
+const skillTextBodyRight = document.getElementById('textBodyRight');
+const skillTextBodyLeft = document.getElementById('textBodyLeft');
+const nextColumn = document.getElementById('textBodyRightNextCol');
 
-// navbar buttons smoothscroll
-projectsButton = document.getElementById("projects");
-aboutButton = document.getElementById("about");
-contactButton = document.getElementById("contact");
+
+// navbar buttons select buttons
+const buttons = document.querySelectorAll(".nav a");
 
 // scroll top button
 goTopButton = document.getElementById("goTopButton");
@@ -44,7 +43,7 @@ boxes.forEach(elem => {
 });
 
 // toggle margin for showing section
-let showSkillBody = function() {
+const showSkillBody = function() {
   skillContainerRight.style.marginLeft = "20%";
   skillContainerRight.style.opacity = "1";
   skillContainerLeft.style.marginLeft = "0";
@@ -52,7 +51,7 @@ let showSkillBody = function() {
 }
 
 // html part
-let htmlInfo = function() {
+const htmlInfo = function() {
   nextColumn.innerHTML = "";
   skillContainerRight.style.background = "black";
   skillHeading.innerHTML = "Understanding of:";
@@ -68,7 +67,7 @@ let htmlInfo = function() {
 }
 
 // css part
-let cssInfo = function() {
+const cssInfo = function() {
   nextColumn.innerHTML = "";
   skillContainerRight.style.background = "#000c1e";
   skillHeading.innerHTML = "Familiar with:";
@@ -83,7 +82,7 @@ let cssInfo = function() {
                                + "<h1>CSS</h1>"
 }
 // js part
-let jsInfo = function() {
+const jsInfo = function() {
   skillContainerRight.style.background = "#060701";
   skillHeading.innerHTML = "Feeling comfortable with:";
   skillTextBodyRight.innerHTML = "<li class='jsText'>JavaScript Fundamentals</li>"
@@ -97,7 +96,7 @@ let jsInfo = function() {
 }
 
 // java part
-let javaInfo = function() {
+const javaInfo = function() {
   skillContainerRight.style.background = "#060701";
   skillHeading.innerHTML = "Feeling comfortable with:";
   skillTextBodyRight.innerHTML = "<li class='javaText'>JavaScript Fundamentals</li>"
@@ -110,7 +109,7 @@ let javaInfo = function() {
                               + "<h1>Javascript</h1>"
 }
 
-let angularInfo = function() {
+const angularInfo = function() {
   skillContainerRight.style.background = "black";
   skillHeading.innerHTML = "Able to work with:";
   skillTextBodyRight.innerHTML = "<li class='angularText'>Components and Databinding</li>"
@@ -128,8 +127,8 @@ let angularInfo = function() {
 
 
 
-// toggle margin for closing section
-let closeSkillContainer = function() {
+// toggle margin for closing sections
+const closeSkillContainer = function() {
   let closeButton = document.getElementById("close");
   closeButton.addEventListener("click", () => {
     skillContainerRight.style.marginLeft = "100%";
@@ -150,28 +149,42 @@ document.addEventListener('keydown', function(e) {
 })
 
 
-projectsButton.addEventListener("click", () => {
-  window.scroll({
-    top: 850,  
-    behavior: 'smooth'
-  });
-});
-aboutButton.addEventListener("click", () => {
-  window.scroll({
-    top: 2450,  
-    behavior: 'smooth'
-  });
-});
-contactButton.addEventListener("click", () => {
-  window.scroll({
-    top: 2850,  
-    behavior: 'smooth'
-  });
-});
-goTopButton.addEventListener("click", () => {
-  window.scroll({
-    top: 100,  
-    behavior: 'smooth'
-  });
-});
+
+// smooth scrolling
+buttons.forEach(item => item.addEventListener('click', navbarItemClick));
+goTopButton.addEventListener('click', navbarItemClick);
+
+function navbarItemClick (event) {
+  if(event.currentTarget.getAttribute('href') == null) {
+
+  } else {
+    
+  }
+  
+  event.preventDefault();
+  const targetId = event.currentTarget.getAttribute("href") == null ? '.heading' : event.currentTarget.getAttribute("href");
+  const duration = 700;
+  const targetPosition = document.querySelector(targetId).offsetTop;
+  const startPosition = window.pageYOffset;
+  const distance = targetPosition - startPosition;
+  let start = null;
+  window.requestAnimationFrame(step);
+
+  function step(timestamp) {
+    if (!start) start = timestamp;
+    const progress = timestamp - start;
+    window.scrollTo(0, cubic(progress, startPosition, distance, duration));
+    if (progress < duration) {
+      window.requestAnimationFrame(step);
+    }
+  }
+}
+
+function cubic(t, b, c, d) {
+	t /= d/2;
+	if (t < 1) return -c/2 * (Math.sqrt(1 - t*t) - 1) + b;
+	t -= 2;
+	return c/2 * (Math.sqrt(1 - t*t) + 1) + b;
+};
+
 

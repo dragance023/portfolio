@@ -62,20 +62,19 @@
 		color: rgb(204, 201, 201);
 		cursor: pointer;
 	}
-	.nav ul li a:hover {
-		color: #000;
-	}
+
 	.btn {
-		border:2px solid rgb(100, 100, 100);
+		border:1px solid rgb(100, 100, 100);
 		border-radius: 18px;
 		padding: 2px 14px;
 		z-index: 1;
 		transition: 400ms ease-in-out;
+		opacity: .6;
 	}
 	.btn:hover {
-		opacity: .6;
-		background-color:#ffb329;
-		transition: 800ms ease-in-out;
+		opacity: 1;
+		border:1px solid rgb(107, 151, 153);
+		transition: 400ms ease-out;
 		box-shadow: .1px .1px 2px;
 	}
 /* NAVIGATION END */
