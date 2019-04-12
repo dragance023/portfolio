@@ -30,13 +30,13 @@ boxes.forEach(elem => {
         jsInfo();
       }
       else if(e.target.closest('.java')) {
-        javaInfo();
+        sassInfo();
       }
       else if(e.target.closest('.rwd')) {
         angularInfo();
       }
       else if(e.target.closest('.ai')) {
-        console.log("illustrator")
+        illustrator();
       }
       closeSkillContainer();
     });
@@ -61,7 +61,7 @@ const htmlInfo = function() {
                                + "<li class='htmlText'>HTTP Protocol</li>";
   aboutSkillSpan.innerHTML     = "Fun and simple markup language, it was one of the first things to learn on this journey."
   
-  skillTextBodyLeft.innerHTML = "<img src='https://raw.githubusercontent.com/dragance023/portfolio-v1/master/img/html.png'>"
+  skillTextBodyLeft.innerHTML = "<img src='./img/html.png'>"
                                + "<h1>HTML5</h1>"
 
 }
@@ -78,7 +78,7 @@ const cssInfo = function() {
                                + "<li class='cssText'>Pseudo Classes</li>"
                            + "<li class='cssText'>Document Flow</li>"
   aboutSkillSpan.innerHTML     = "CSS Animations are the next thing I will be focusing on."
-  skillTextBodyLeft.innerHTML = "<img src='https://raw.githubusercontent.com/dragance023/portfolio-v1/master/img/css.png'>"
+  skillTextBodyLeft.innerHTML = "<img src='./img/css.png'>"
                                + "<h1>CSS</h1>"
 }
 // js part
@@ -90,23 +90,23 @@ const jsInfo = function() {
                                + "<li class='jsText'>Asynchronity</li>"
                                + "<li class='jsText'>ECMAScript 6</li>"
                                + "<li class='jsText'>Variable scoping</li>"
-  aboutSkillSpan.innerHTML     = "Something about JavaCcript"
-  skillTextBodyLeft.innerHTML = "<img src='https://raw.githubusercontent.com/dragance023/portfolio-v1/master/img/js.png'>"
+  aboutSkillSpan.innerHTML     = "There is always something new to learn in Javascript"
+  skillTextBodyLeft.innerHTML = "<img src='./img/js.png'>"
                               + "<h1>Javascript</h1>"
 }
 
 // java part
-const javaInfo = function() {
+const sassInfo = function() {
   skillContainerRight.style.background = "#060701";
   skillHeading.innerHTML = "Feeling comfortable with:";
-  skillTextBodyRight.innerHTML = "<li class='javaText'>JavaScript Fundamentals</li>"
-                               + "<li class='javaText'>DOM Manipulation</li>"
-                               + "<li class='javaText'>Asynchronity</li>"
-                               + "<li class='javaText'>ECMAScript 6</li>"
-                               + "<li class='javaText'>Variable scoping</li>"
-  aboutSkillSpan.innerHTML     = "Something about JavaCcript"
-  skillTextBodyLeft.innerHTML = "<img src='https://raw.githubusercontent.com/dragance023/portfolio-v1/master/img/js.png'>"
-                              + "<h1>Javascript</h1>"
+  skillTextBodyRight.innerHTML = "<li class='sasstext'>Compiling Sass</li>"
+                               + "<li class='sasstext'>Nesting Selectors</li>"
+                               + "<li class='sasstext'>Variables in Sass</li>"
+                               + "<li class='sasstext'>Mixins</li>"
+                               + "<li class='sasstext'>Components</li>"
+  aboutSkillSpan.innerHTML     = "Css with superpowers."
+  skillTextBodyLeft.innerHTML = "<img src='./img/sass.png'>"
+                              + "<h1>Sass</h1>"
 }
 
 const angularInfo = function() {
@@ -119,11 +119,24 @@ const angularInfo = function() {
                                + "<li class='angularText'>Observables</li>"
                                + "<li class='angularText'>Forms</li>"
                                + "<li class='angularText'>HTTP Requests</li>"
-                               + "<li class='angularText'>TypeScript</li>"
-  aboutSkillSpan.innerHTML     = "Something about JavaCcript"
+  aboutSkillSpan.innerHTML     = "Angular"
   skillTextBodyLeft.innerHTML = "<img src='./img/angular.png'>"
                               + "<h1>Angular</h1>"
 }
+
+const illustrator = function() {
+  skillContainerRight.style.background = "black";
+  skillHeading.innerHTML = "I was using Illustrator to:";
+  skillTextBodyRight.innerHTML = "<li class='illustratortext'>Create vector based icons and logos</li>"
+                               + "<li class='illustratortext'>Follow up design and convert it to HTML/CSS</li>"
+
+  aboutSkillSpan.innerHTML     = "Adobe Illustrator"
+  skillTextBodyLeft.innerHTML = "<img src='./img/ai.png'>"
+                              + "<h1>Adobe Illustrator</h1>"
+}
+
+
+
 
 
 
@@ -154,13 +167,7 @@ document.addEventListener('keydown', function(e) {
 buttons.forEach(item => item.addEventListener('click', navbarItemClick));
 goTopButton.addEventListener('click', navbarItemClick);
 
-function navbarItemClick (event) {
-  if(event.currentTarget.getAttribute('href') == null) {
-
-  } else {
-    
-  }
-  
+function navbarItemClick (event) {  
   event.preventDefault();
   const targetId = event.currentTarget.getAttribute("href") == null ? '.heading' : event.currentTarget.getAttribute("href");
   const duration = 700;
@@ -210,7 +217,7 @@ function showTextOnScroll() {
 
   if(footerTextPosition < screenPosition/1.2) {
     footerText.classList.add('show');
-    console.log("asd")
+
   }
   if(footerTextPosition > 900){
     footerText.classList.remove('show');

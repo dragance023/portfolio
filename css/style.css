@@ -12,6 +12,7 @@
 		overflow-x: hidden;
 		box-sizing: border-box;
 		font-family: 'Raleway', sans-serif;
+		
 	}
 	button {
 		cursor: pointer;
@@ -169,7 +170,7 @@
 
 	/* SKILLS */
 	.skills-section {
-		background: rgba(31, 31, 31, 0.959);
+		background: rgb(29, 36, 43);
 		width: 100%;
 		border-top: solid 7px rgb(0, 0, 0);
 		border-bottom: solid 1px #111111;
@@ -224,6 +225,29 @@
 	}
 
 
+	/* OTHER SKILLS */
+
+	.other-skills {
+		background: rgb(18, 26, 32);
+	}
+	.other-skills h3 {
+		text-align: center;
+		color: rgb(190, 190, 190); 
+		font-family: "Arial", Courier, monospace;
+		padding-top: 40px;
+
+
+	}
+	.skills-container-other {
+		display: flex;
+		justify-content: center;
+		padding: 2em;
+	}
+	.skills-container-other > img {
+		width: 5em;
+		height: 5em;
+		margin: 0 .5em;	
+	}
 
 /* ToolTip */
 .tooltiptext {
@@ -329,16 +353,21 @@
 		color: #f0db4f;
 	}
 
-	.javaText {
+	.sasstext {
 		margin: 1em;
 		font-size: 1.2em;
-		color: #ce7c20;
+		color: #c69;
 	}
 
 	.angularText {
 		margin: 1em;
 		font-size: 1.2em;
 		color: #b52e31;
+	}
+	.illustratortext {
+		margin: 1em;
+		font-size: 1.2em;
+		color: #d16b31;
 	}
 
 /* About */
@@ -394,25 +423,31 @@
 
 	/* Contact */
 
-	.contact form{
+	.contact form {
 		width: 50%;
 		padding: 30px;
-		background: #222;
-		margin: 10em auto 4em;
+		background: rgb(18, 26, 32);
+		margin: 10em auto;
 		border: 1px solid rgb(47, 47, 47);
 	}
 
-	.contact input{
+	.contact input {
 		width: 100%;
 		margin: 10px 0;
 		padding: 10px 0;
 		box-sizing: border-box;
+		background: rgb(162, 185, 207);
+		border: none;
+		text-indent: 1em;
 	}
-
 	.contact textarea {
 		width: 100%;
-		padding: 2em 0;
+		padding-bottom: 4em;
+		padding-top: .5em;
 		box-sizing: border-box;
+		background: rgb(162, 185, 207);
+		border: none;
+		text-indent: .5em;
 	}
 	.contact button {
 		margin-top: 2em;
@@ -421,12 +456,12 @@
 	}
 
 	.formParralax {
-		background: url(../img/coffee.jpg);
+		background: url(../img/bg.jpg); 
 		background-position: bottom;
 		background-repeat: no-repeat;
 		background-size: cover;
-	    width: 100vw;
-	    /* height: 80vh; */
+		width: 100vw;
+		height: 100vh;
 	    position: absolute;
 	    z-index: -1;
 	    background-attachment: fixed;
@@ -494,9 +529,6 @@
 	.about-section {
 		padding: 10px;
 	}
-	.skills-section {
-		height: 1200px;
-	}
 	.skills-container {
 		padding-top: 40px; 
 		display: grid;
@@ -515,6 +547,11 @@
 	}
 	.css-right-section, .css-left-section {
 		display: none;
+	}
+
+	.skills-container-other > img{
+		width: 8vw;
+		height: 8vw;
 	}
 	.tooltiptext {
 		display: none;
@@ -535,22 +572,13 @@
 		display: grid;
 		grid-template-columns: 1fr;
 	}	
-	.skills-section {
-		height: 2100px;
+	.skills-container-other {
+		/* flex-direction: column; */
 	}
-#css-left-section, .css-right-section {
-		display: none;
-		padding: 0;
-}
-
-@keyframes zoom {
-	from {transform:scale(0)}
-	to {transform:scale(1)}
-  }
-
-
-
-
+	.css-left-section, .css-right-section {
+			display: none;
+			padding: 0;
+	}
 
 }
 
